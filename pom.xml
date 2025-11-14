@@ -26,6 +26,18 @@
         </dependency>
     </dependencies>
 
+    <!-- Add Nexus deployment configuration -->
+    <distributionManagement>
+        <repository>
+            <id>nexus-releases</id>
+            <url>http://44.204.5.67:8081/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <url>http://44.204.5.67:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <build>
         <finalName>rps-game</finalName>
 
