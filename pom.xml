@@ -7,7 +7,7 @@
 
     <groupId>com.example</groupId>
     <artifactId>rock-paper-scissors-web</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>war</packaging>
 
     <properties>
@@ -26,15 +26,15 @@
         </dependency>
     </dependencies>
 
-    <!-- Add Nexus deployment configuration -->
+    <!-- Nexus deployment configuration -->
     <distributionManagement>
         <repository>
             <id>nexus-releases</id>
-            <url>http://44.204.5.67:8081/repository/maven-releases/</url>
+            <url>http://44.204.230.219:8081/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>nexus-snapshots</id>
-            <url>http://44.204.5.67:8081/repository/maven-snapshots/</url>
+            <url>http://44.204.230.219:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
@@ -42,12 +42,14 @@
         <finalName>rps-game</finalName>
 
         <plugins>
+            <!-- WAR Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.4.0</version>
             </plugin>
 
+            <!-- Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -58,13 +60,12 @@
                 </configuration>
             </plugin>
 
-            <!-- SonarQube plugin -->
+            <!-- SonarQube Plugin -->
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
                 <version>3.11.0.3922</version>
             </plugin>
-
         </plugins>
     </build>
 
